@@ -1,0 +1,589 @@
+
+<!doctype html>
+<html lang="en">
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/data.js"></script>
+        <script src="https://code.highcharts.com/modules/drilldown.js"></script>  
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- //Required meta tags -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://use.fontawesome.com/release/v5.0.8/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+    <!--//Bootstrap CSS -->
+
+    <!--CustomCSS-->
+    <link rel="stylesheet" href="custom.css">
+    <!--//CustomCSS-->
+    <!--  style css  -->
+    <style>
+        
+        #footer-tnk {}
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-------------------------TERNAK---------------------------->
+    <!---------Navigation Bar-------->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid navbar-container">
+            <a class="navbar-brand" href="#" style="font-family:monospace"><img src="img/cow2.png" width="50" height="50" class="rounded-circle" alt="responsive image"> SI PETERNAKAN </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav mr-auto mb-1">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Beranda</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sekilas</a>
+                        <div class="dropdown-menu" arial-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Profil</a>
+                            <a class="dropdown-item" href="#">Sejarah</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ternak</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Harga</a>
+                            <a class="dropdown-item" href="#">Hasil</a>
+                            <a class="dropdown-item" href="#">Statistik</a>
+                            <a class="dropdown-item" href="#">Perawatan</a>
+                            <a class="dropdown-item" href="#">Peta Potensi</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Layanan</a>
+                        <div class="dropdown-menu" arial-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Info Kesehatan</a>
+                            <a class="dropdown-item" href="#">Forum</a>
+                            <a class="dropdown-item" href="#">Periksa</a>
+                            <a class="dropdown-item" href="#">Pantau Kandang</a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/login') }}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/register') }}">Register</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <!---------//End Navigation Bar-------->
+
+
+    <!---------Content-------->
+    <section class="TernakI">
+        <div id="content-tnk" class="container mt-5 mb-5">
+            <div class="row">
+                <div id="panel-tnk" class="col-md-2">
+                    <div class="list-group" id="list-tab" role="tablist">
+                        <a class="list-group-item list-group-item-action" id="list-harga-list" data-toggle="list" href="#list-harga" role="tab" aria-controls="harga">Harga</a>
+                        <!-- <a class="list-group-item list-group-item-action" id="list-hasil-list" data-toggle="list" href="#list-hasil" role="tab" aria-controls="hasil">Hasil</a> -->
+                        <a class="list-group-item list-group-item-action" id="list-statistik-list" data-toggle="list" href="#list-statistik" role="tab" aria-controls="statistik">Statistik</a>
+                       <!--  <a class="list-group-item list-group-item-action" id="list-perawatan-list" data-toggle="list" href="#list-perawatan" role="tab" aria-controls="perawatan">Perawatan</a>
+                        <a class="list-group-item list-group-item-action" id="list-potensi-list" data-toggle="list" href="#list-potensi" role="tab" aria-controls="potensi">Potensi</a> -->
+                    </div>
+                </div>
+                <div class="row"></div>
+                <div class="col-md-9">
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="list-harga" role="tabpanel" aria-labelledby="list-harga-list">
+                            <!-- Panel Harga -->
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <h4>Sapi</h4>
+                                    </div>
+                                    
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        
+                                        <img src="img\Capture.png" width="120px">
+                                    </div>
+                                    <div class="col-md-10">
+                                        <table style="width:50%">
+                                            <tr>
+                                                <td>Jenis</td>
+                                                <td>Smith</td> 
+                                            </tr>
+                                            <tr>
+                                                <td>Berat</td>
+                                                <td>Jackson</td> 
+                                            </tr>
+                                             <tr>
+                                                <td>Jenis Kelamin</td>
+                                                <td>Jackson</td> 
+                                            </tr>
+                                             <tr>
+                                                <td>Nama Peternak</td>
+                                                <td>Jackson</td> 
+                                            </tr>
+                                             <tr>
+                                                <td>Kontak</td>
+                                                <td>Jackson</td> 
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="tab-pane fade" id="list-hasil" role="tabpanel" aria-labelledby="list-hasil-list">
+                            this is content
+                            ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis ullam magnam nam, repellat quo veritatis, porro iure? Alias, repellendus perferendis.
+                            consectetur adipisicing elit. Repellat, aperiam velit et. Sunt iure maxime eveniet veritatis omnis rem quis assumenda numquam dolorum libero dicta asperiores sint veniam corporis
+                        </div> -->
+                        <div class="tab-pane fade" id="list-statistik" role="tabpanel" aria-labelledby="list-messages-list">
+                            <!--this is content-->
+                             <div id="container" style="min-width: 310px; height: 100%; margin: 0 auto"></div>
+                            
+                        </div>
+
+                       <!--  <div class="tab-pane fade" id="list-perawatan" role="tabpanel" aria-labelledby="list-settings-list">
+                             Panel perawatan
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6 ">
+                                        <h3>Pakan<span class="label label-default"></span></h3>
+                                        <p> esse, asperiores eum adipisci quos. Sint tempora sapiente, nesciunt ratione maiores doloremque quam, recusandae, officia consequatur in quod praesentium. Dignissimos inventore quod voluptates modi dolor praesentium magni laudantium nostrum iste, quasi quos reiciendis maxime dolorum eum, sequi cumque. Inventore quaerat enim excepturi, doloribus ullam animi repudiandae ut quidem officiis numquam tenetur,</p>
+                                    </div> 
+                                    <div class="col-md-6">
+                                        <h3>Perawatan<span class="label label-default"></span></h3>
+                                        <p>saepe, error quos necessitatibus repudiandae quia, quasi officia unde quis incidunt facilis quidem aut deleniti placeat aliquid repellendus! Reiciendis veritatis quisquam corporis culpa minima doloremque saepe perferendis placeat vitae in animi architecto repellendus, earum quo quam voluptatem explicabo modi</p>
+                                    </div>  
+                                </div>
+                            </div>                            
+                        </div> -->
+
+                       <!--  <div class="tab-pane fade" id="list-potensi" role="tabpanel" aria-labelledby="list-settings-list">
+                            this is content
+                            quaerat eum odio quasi dignissimos harum nobis nulla ullam magnam quas fuga molestiae molestias ut sed autem incidunt aut minima, suscipit quidem! Illum expedita ab architecto quae provident quis, excepturi iste! Nulla quidem sed non ut voluptatum inventore earum commodi itaque nisi dolorem, laboriosam nobis
+
+                            m nihil similique iure cupiditate rerum qui at veniam fugit repellendus quaerat soluta consectetur veritatis officiis quo. Necessitatibus ut dolorem sunt molestias sit, voluptatem enim repellendus minima facilis, esse dolorum. Vel nostrum incidunt non temporibus repellendus velit laudantium sit distinctio illum tempore dolore labore suscipit perferendis pariatur ipsam, culpa nulla at. Quisquam est velit
+
+                            debitis, vero impedit qui, fugit quia. Amet quisquam cupiditate nesciunt blanditiis optio, possimus temporibus quibusdam itaque error id ut veniam nobis aut quod reprehenderit vel soluta, officiis in fugiat rerum modi mollitia! Perspiciatis adipisci debitis vel unde. Rem quam fuga odio quas blanditiis, excepturi maxime unde distinctio, placeat id perspiciatis incidunt porro, aut necessitatibus libero. Repudiandae, quia eos facere. Quibusdam, alias, recusandae non ab omnis nihil, voluptates laudantium eum, aut illum adipisci illo exercitationem? Recusandae quidem quis vero sapiente alias eveniet possimus quae ullam adipisci magni provident, impedit minima sunt, nihil molestiae deleniti repellendus quos sit eos,
+
+                            , quasi aut, est dignissimos, laboriosam odio enim consequuntur, dolorum rerum illum accusantium quibusdam necessitatibus. Expedita laudantium dolore facilis sequi voluptates dignissimos. Deleniti illum facilis nam enim, expedita alias rem cumque sapiente, tenetur repellat impedit, accusantium non! Nesciunt ipsa magnam beatae commodi reprehenderit consequuntur obcaecati asperiores impedit debitis ab ratione, fugiat aspernatur eos incidunt inventore a. Perspiciatis commodi saepe distinctio voluptates, suscipit architecto cumque molestiae molestias aspernatur tenetur dignissimos atque id omnis doloremque soluta dolores hic ex sunt non? Amet dolorem repudiandae eum eius
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!---------//End Content-------->
+
+
+
+    <!-------Footer--------->
+    <footer id="footer-tnk" class="footer pt-4 bg-dark">
+        <div class="footer bg-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <h1 id="hfooter">Sistem Informasi Peternakan</h1>
+                        <p></p>
+                    </div>
+                    <div id="flinkpage" class="col-lg-4">
+                        <h4 id="useful">Useful links</h4>
+                        <ul>
+                            <li><a href="#">Beranda</a></li>
+                            <li><a href="#">Sekilas</a></li>
+                            <li><a href="#">Ternak</a></li>
+                            <li><a href="#">Ternak</a></li>
+                            <li><a href="#">Layanan</a></li>
+                        </ul>
+                    </div>
+                    <div id="footerlink" class="col-lg-2 ">
+                        <h4 id="social">Social Media</h4>
+                        <ul>
+                            <li><a href="https://twitter.com/"><img src="img/twitter.png" data-toggle="tooltip" data-placement="right" title="Twitter"></a></li>
+                            <li><a href="https://www.facebook.com/"><img src="img/facebook.png" data-toggle="tooltip" data-placement="right" title="Facebook"></a></li>
+                            <li><a href="https://plus.google.com/discover"><img src="img/google-plus.png" data-toggle="tooltip" data-placement="right" title="Google Plus"></a></li>
+                            <li><a href="https://www.youtube.com/"><img src="img/youtube.png" data-toggle="tooltip" data-placement="right" title="Twitter"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---------Copyright-------->
+        <div id="copyright" class="container-expand text-center">
+            <span class="">Copyright &copy; SIPT 2018. Allright Rerserved | Design by My Team.</span>
+        </div>
+        <!---------//End Navigation Copyright-------->
+
+    </footer>
+    <!---------//End Footer-------->
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery.2.1.1/jquery.min.js"></script>
+    <!--Tooltip-->
+    <script type="text/javascript">
+        // Create the chart
+            Highcharts.chart('container', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Data Statistik Perkembangan Sapi'
+                },
+                subtitle: {
+                    text: 'Sumber :'
+                },
+                xAxis: {
+                    type: 'category'
+                },
+                yAxis: {
+                    title: {
+                        text: 'Total Pertumbuhan Sapi Perbulan'
+                    }
+
+                },
+                legend: {
+                    enabled: false
+                },
+                plotOptions: {
+                    series: {
+                        borderWidth: 0,
+                        dataLabels: {
+                            enabled: true,
+                            format: '{point.y:.1f}'
+                        }
+                    }
+                },
+
+                tooltip: {
+                    headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+                    pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}</b>'
+                },
+
+                "series": [
+                    {
+                        "name": "Bulan",
+                        "colorByPoint": true,
+                        "data": [
+                            {
+                                "name": "Januari",
+                                "y": 62.74,
+                                "drilldown": "Januari"
+                            },
+                            {
+                                "name": "Februari",
+                                "y": 10.57,
+                                "drilldown": "Februari"
+                            },
+                            {
+                                "name": "Maret",
+                                "y": 7.23,
+                                "drilldown": "Maret"
+                            },
+                            {
+                                "name": "April",
+                                "y": 5.58,
+                                "drilldown": "April"
+                            },
+                            {
+                                "name": "Mei",
+                                "y": 4.02,
+                                "drilldown": "Mei"
+                            },
+                            {
+                                "name": "Juni",
+                                "y": 67,
+                                "drilldown": "Juni"
+                            },
+                            {
+                                "name": "Juli",
+                                "y": 70,
+                                "drilldown": "Juli"
+                            },
+                            {
+                                "name": "September",
+                                "y": 84,
+                                "drilldown": "September"
+                            },
+                            {
+                                "name": "Agustus",
+                                "y": 75,
+                                "drilldown": "Agustus"
+                            },
+                            {
+                                "name": "Oktober",
+                                "y": 50,
+                                "drilldown": "Oktober"
+                            },
+                            {
+                                "name": "November",
+                                "y": 78,
+                                "drilldown": "November"
+                            },
+                            {
+                                "name": "Desember",
+                                "y": 91,
+                                "drilldown": "Desember"
+                            },
+                        ]
+                    }
+                ],
+                // "drilldown": {
+                //     "series": [
+                //         {
+                //             "name": "Chrome",
+                //             "id": "Chrome",
+                //             "data": [
+                //                 [
+                //                     "v65.0",
+                //                     0.1
+                //                 ],
+                //                 [
+                //                     "v64.0",
+                //                     1.3
+                //                 ],
+                //                 [
+                //                     "v63.0",
+                //                     53.02
+                //                 ],
+                //                 [
+                //                     "v62.0",
+                //                     1.4
+                //                 ],
+                //                 [
+                //                     "v61.0",
+                //                     0.88
+                //                 ],
+                //                 [
+                //                     "v60.0",
+                //                     0.56
+                //                 ],
+                //                 [
+                //                     "v59.0",
+                //                     0.45
+                //                 ],
+                //                 [
+                //                     "v58.0",
+                //                     0.49
+                //                 ],
+                //                 [
+                //                     "v57.0",
+                //                     0.32
+                //                 ],
+                //                 [
+                //                     "v56.0",
+                //                     0.29
+                //                 ],
+                //                 [
+                //                     "v55.0",
+                //                     0.79
+                //                 ],
+                //                 [
+                //                     "v54.0",
+                //                     0.18
+                //                 ],
+                //                 [
+                //                     "v51.0",
+                //                     0.13
+                //                 ],
+                //                 [
+                //                     "v49.0",
+                //                     2.16
+                //                 ],
+                //                 [
+                //                     "v48.0",
+                //                     0.13
+                //                 ],
+                //                 [
+                //                     "v47.0",
+                //                     0.11
+                //                 ],
+                //                 [
+                //                     "v43.0",
+                //                     0.17
+                //                 ],
+                //                 [
+                //                     "v29.0",
+                //                     0.26
+                //                 ]
+                //             ]
+                //         },
+                //         {
+                //             "name": "Firefox",
+                //             "id": "Firefox",
+                //             "data": [
+                //                 [
+                //                     "v58.0",
+                //                     1.02
+                //                 ],
+                //                 [
+                //                     "v57.0",
+                //                     7.36
+                //                 ],
+                //                 [
+                //                     "v56.0",
+                //                     0.35
+                //                 ],
+                //                 [
+                //                     "v55.0",
+                //                     0.11
+                //                 ],
+                //                 [
+                //                     "v54.0",
+                //                     0.1
+                //                 ],
+                //                 [
+                //                     "v52.0",
+                //                     0.95
+                //                 ],
+                //                 [
+                //                     "v51.0",
+                //                     0.15
+                //                 ],
+                //                 [
+                //                     "v50.0",
+                //                     0.1
+                //                 ],
+                //                 [
+                //                     "v48.0",
+                //                     0.31
+                //                 ],
+                //                 [
+                //                     "v47.0",
+                //                     0.12
+                //                 ]
+                //             ]
+                //         },
+                //         {
+                //             "name": "Internet Explorer",
+                //             "id": "Internet Explorer",
+                //             "data": [
+                //                 [
+                //                     "v11.0",
+                //                     6.2
+                //                 ],
+                //                 [
+                //                     "v10.0",
+                //                     0.29
+                //                 ],
+                //                 [
+                //                     "v9.0",
+                //                     0.27
+                //                 ],
+                //                 [
+                //                     "v8.0",
+                //                     0.47
+                //                 ]
+                //             ]
+                //         },
+                //         {
+                //             "name": "Safari",
+                //             "id": "Safari",
+                //             "data": [
+                //                 [
+                //                     "v11.0",
+                //                     3.39
+                //                 ],
+                //                 [
+                //                     "v10.1",
+                //                     0.96
+                //                 ],
+                //                 [
+                //                     "v10.0",
+                //                     0.36
+                //                 ],
+                //                 [
+                //                     "v9.1",
+                //                     0.54
+                //                 ],
+                //                 [
+                //                     "v9.0",
+                //                     0.13
+                //                 ],
+                //                 [
+                //                     "v5.1",
+                //                     0.2
+                //                 ]
+                //             ]
+                //         },
+                //         {
+                //             "name": "Edge",
+                //             "id": "Edge",
+                //             "data": [
+                //                 [
+                //                     "v16",
+                //                     2.6
+                //                 ],
+                //                 [
+                //                     "v15",
+                //                     0.92
+                //                 ],
+                //                 [
+                //                     "v14",
+                //                     0.4
+                //                 ],
+                //                 [
+                //                     "v13",
+                //                     0.1
+                //                 ]
+                //             ]
+                //         },
+                //         {
+                //             "name": "Opera",
+                //             "id": "Opera",
+                //             "data": [
+                //                 [
+                //                     "v50.0",
+                //                     0.96
+                //                 ],
+                //                 [
+                //                     "v49.0",
+                //                     0.82
+                //                 ],
+                //                 [
+                //                     "v12.1",
+                //                     0.14
+                //                 ]
+                //             ]
+                //         }
+                //     ]
+                // }
+            });
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
+        $('#myList a').on('click', function(e) {
+            e.preventDefault()
+            $(this).tab('show')
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
